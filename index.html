@@ -21,23 +21,36 @@
 		</header>
 		<!-- MAIN PAGE -->
 		<main>
-			<!-- 3D MODEL -->
-			<section class="3d-model">
+			<!-- HOME SCREEN -->
+			<section>
+				<!-- 3D MODEL -->
+				<section class="3d-model">
 
+				</section>
+				<!-- ENTRY/RESPONSE SECTION -->
+				<section class="intro">
+					<!-- ENTRY SCREEN -->
+					<section class="entry-screen">
+						<h2>What question does your heart seek to answer?</h2>
+						<p class="instructions">Ask Zoltar any yes or no question.</p>
+						<p class="example">'Will I be happy in 5 years?'</p>
+						<p class="error-box"></p>
+						<form class="question-form" onkeydown="return event.key != 'Enter';" action="">
+							<input class="question-input" type="text" placeholder="Enter question">
+							<button type="button" class="fortune-btn">Tell Me My Fortune</button>
+						</form>
+					</section>
+					<!-- RESPONSE SCREEN -->
+					<section class="response-screen">
+						<p class="question"></p>
+						<h3 class="answer"></h3>
+						<button class="new-question">New Question</button>
+					</section>
+					<section class="past-fortunes"></section>
+				</section>
 			</section>
-			<!-- TEXT FORM SECTION -->
-			<section class="intro">
-				<h2>What answer does your heart seek?</h2>
-				<p>Ask Zoltar any question.</p>
-				<p>'Will I be happy in 5 years?'</p>
-				<p class="error-box"></p>
-				<form class="question-form" onkeydown="return event.key != 'Enter';" action="">
-					<input class="question-input" type="text" placeholder="Enter question">
-					<button type="button" class="fortune-btn">Get My Fortune</button>
-				</form>
-				<!-- CRYSTAL BALL ANIMATON -->
-				<div class=" crystal-ball hidden"></div>
-			</section>
+			<!-- CRYSTAL BALL LOADING ANIMATON SCREEN -->
+			<section class="crystal-ball hidden"></section>
 		</main>
 
 		<script type="text/javascript" src="js/main.js"></script>
