@@ -23,7 +23,15 @@
 
 body {
      font-size: 62.5%;
-
+}
+body > * {
+     border: blue solid 5px;
+}
+.home > * {
+     border: purple solid 1px;
+}
+.intro > * {
+     border: green solid 1px
 }
 
 
@@ -31,10 +39,58 @@ body {
 /* LAYOUT
 /*******************************************/
 header {
-
+     text-align: center;
 }
+.home {
+     display: flex;
+     flex-wrap: wrap;
+     height: fit-content;
+}
+.threeD-model {
+     background-color: orange;
+}
+.threeD-model, .intro {
+     width: 50%;
+}
+.intro {
+     text-align: center;
+     padding: 30px;
+}
+.question-form {
+     display: flex;
+     width: 100%;
+     flex-direction: column;
+     align-items: center;
+}
+.question-form > * {
+     margin-bottom: .5rem;
+}
+.entry-screen, .response-screen {
+     padding: .5rem;
+}
+.past-fortunes {
+     flex-basis: 100%;
+     display: flex;
+     padding: 1rem;
+     text-align: center;
+     align-items: center;
+     overflow-x: scroll;
+}
+.past-fortunes > * {
+     margin-right: 2rem;
+}
+.past-fortune-box {
+     height: 60px;
+     min-width: 110px;
 
+     background-color: grey;
+}
 footer {
+     width: 100%;
+     margin: 0 auto;
+     position: fixed;
+     bottom: 10px;
+     text-align: center;
 
 }
 
@@ -43,4 +99,8 @@ footer {
 /*******************************************/
 .hidden {
      display: hidden;
+}
+
+@media screen and (max-width: 750px) {
+     
 }
