@@ -4,12 +4,14 @@ let errorTextBox = document.querySelector('.error-box')
 
 fortuneBtn.addEventListener('click', processRequest)
 
-function processRequest() {
+async function processRequest() {
     //validate text
    let validQuestion = validateQuestion(input.value);
    if (!validQuestion) return;
 
    //get response from server
+   let response = await fetchFortuneResponse()
+   console.log(response);
 
    //show loading animation
 
@@ -22,7 +24,8 @@ function processRequest() {
 
 // validates text, if not valid shows error message in the DOM
 function validateQuestion(question) {
-    let questionWordList = question.split(' ');
+    let questionWordList = question.toLowerCase().split(' ');
+    let starterWords = ['will', 'am', 'is'];
     
     if (!question) {
         errorTextBox.innerText = 'Please enter a question';
@@ -30,9 +33,15 @@ function validateQuestion(question) {
     } else if (questionWordList.length < 2) { 
         errorTextBox.innerText = 'Please ask a valid question';
         return false;
-    } else if (question.at(-1) !== '?') {
-        errorTextBox.innerText = 'Please end your question with a question mark';
+    } else if (!starterWords.includes(questionWordList[0])) {
+        errorTextBox.innerText = 'Please ask a yes or no question';
         return false;
     } else return true;
 
+}
+
+async function fetchFortuneResponse() {
+    let response = await fetch('/api');
+    let data = await response.json();
+    return data.response;
 }

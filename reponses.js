@@ -1,4 +1,5 @@
-export const fortuneAnswers = {
+const fortuneAnswers = {
+    0: 'It may be so, look to the sky for more guidance',    
     1: 'Don\'t count on it',
     2: 'Outlook not so good',
     3: 'Most likely, the future looks bright',
@@ -8,3 +9,5 @@ export const fortuneAnswers = {
     7: "It's written in the stars",
 
 }
+
+module.exports = fortuneAnswers;
