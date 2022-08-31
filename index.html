@@ -19,11 +19,11 @@
 	</head>
 	<body>
 		<!-- NAVIGATION -->
-		<header>
+		<header class="">
 			<h1 class="cursive-font">FortuneWill</h1>
 		</header>
 		<!-- MAIN PAGE -->
-		<main>
+		<main class="">
 			<!-- HOME SCREEN -->
 			<section class="home">
 				<!-- 3D MODEL -->
@@ -40,7 +40,7 @@
 						<p class="error-box"></p>
 						<form class="question-form" onkeydown="return event.key != 'Enter';" action="">
 							<input class="question-input" type="text" placeholder="Enter question">
-							<button type="button" class="fortune-btn">Tell Me My Fortune</button>
+							<button type="button" class="fortune-btn purple-btn">Tell Me My Fortune</button>
 						</form>
 					</section>
 					<!-- RESPONSE SCREEN -->
@@ -72,5 +72,145 @@
 		</footer>
 
 		<script type="text/javascript" src="js/main.js"></script>
+		<script src="js/three.js"></script>
+		<script src="js/GLTFLoader.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/RGBELoader.js"></script>
+		<script>
+			let threeDBox = document.querySelector('.threeD-model');
+			
+			//tool three.js uses to allocate a space (create canvas) on webpage for adding and animating 3d model
+			const renderer = new  THREE.WebGLRenderer({antialias: true});
+
+			//sets the size of that canvas
+			renderer.setSize(threeDBox.offsetWidth,threeDBox.offsetHeight);
+
+			//injects canvas into the dom
+			threeDBox.appendChild(renderer.domElement)
+
+			//create scene
+			const scene = new THREE.Scene();
+
+			//create camera
+			const camera = new THREE.PerspectiveCamera(
+				75,
+				threeDBox.offsetWidth / threeDBox.offsetHeight,
+				0.1,
+				1000
+			);
+
+			//allows click and rotate functionality
+			let orbit = new THREE.OrbitControls(camera, renderer.domElement)
+			orbit.update();
+
+			// //define axis
+			// var axis = new THREE.Vector3(0,0,0);
+
+			//include helper - coordinate guide, the 3 represents the length of the axis
+			const axesHelper = new THREE.AxesHelper(3);
+			//add axis helper to scene
+			scene.add(axesHelper);
+
+			//move camera backwards
+			camera.position.set(0,0,7.8);
+			
+			let clock = new THREE.Clock();
+
+			//set background to clear
+			renderer.setClearColor( 0x000000, 0);
+
+
+			//set tone mapping properties for lighting environment
+			renderer.outputEncoding = THREE.sRGBEncoding;
+			renderer.toneMapping = THREE.ACESFilmicToneMapping;
+			renderer.toneMappingExposure = 4;
+
+			//import models and environment lighting
+			let zoltar; //global varaible for model so we can apply animation
+			const gltfLoader = new THREE.GLTFLoader();
+
+			const rgbeLoader = new THREE.RGBELoader();
+			rgbeLoader.load('./js/MR_INT-001_NaturalStudio_NAD.hdr', function(texture) {
+				texture.mapping = THREE.EquirectangularReflectionMapping;
+				scene.environment = texture;
+
+				gltfLoader.load('./js/scene.gltf', function(gltf) {
+					const model = gltf.scene;
+					model.position.y = -4.2;
+					model.position.x = 1;
+					model.rotation.x = .2;
+					// model.rotateZ(-.8)
+					
+					model.scale.set(.006,.006,.006)
+					scene.add(model);
+					zoltar = model;
+					console.log(zoltar)
+				})
+
+			});
+
+
+			function animate() {
+				const time = clock.getElapsedTime();
+
+				if (zoltar) {
+					zoltar.position.y = -4.2 + (Math.cos( time ) * 0.2);
+					
+				}
+				//link the scene and camera within the renderer (canvas)
+				renderer.render(scene, camera);
+				
+			}
+
+			renderer.setAnimationLoop(animate);
+			
+			//makes animation responsive
+			window.addEventListener('resize', function() {
+				camera.aspect = threeDBox.offsetWidth / threeDBox.offsetHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize(threeDBox.offsetWidth, threeDBox.offsetHeight);
+			});
+
+			// let scene = new THREE.Scene();
+			// let camera = new THREE.PerspectiveCamera(
+			// 	55, 
+			// 	threeDBox.offsetWidth/threeDBox.offsetHeight,
+			// 	0.01,
+			// 	5000
+			// );
+			// camera.position.set(0,0, 1000)
+			// camera.position.y = 1000;
+
+			
+
+			// highlight = new THREE.AmbientLight(0x404040,10);
+			// scene.add(highlight);
+			// // scene.background = null
+
+			// let renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
+			// renderer.setSize(threeDBox.offsetWidth, threeDBox.offsetHeight);
+			// renderer.setClearColor( 0x000000, 0 );
+			// threeDBox.appendChild(renderer.domElement);
+			
+			// controls = new THREE.OrbitControls(camera, renderer.domElement);
+			// controls.addEventListener('change', renderer);
+
+			// let loader = new THREE.GLTFLoader();
+			// loader.load('/js/scene.gltf', function(gltf){
+			// 	zoltar = gltf.scene.children[0];
+			// 	zoltar.scale.set(0.6,0.6,0.6);
+			// 	zoltar.position.y = -400
+			// 	zoltar.position.x = -30
+				
+
+			//     scene.add(gltf.scene);
+			// 	renderer.render(scene, camera);
+			//     animate();
+			// })
+			// function animate() {
+			// 	renderer.render(scene, camera);
+			// 	requestAnimationFrame(animate);
+			// }
+		</script>
 	</body>
 </html>

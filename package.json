@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/tdo95/fortunewill/issues"
   },
-  "homepage": "https://github.com/tdo95/fortunewill#readme",
-  "dependencies": {
-    "three": "^0.143.0"
-  }
+  "homepage": "https://github.com/tdo95/fortunewill#readme"
 }

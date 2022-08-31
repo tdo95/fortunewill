@@ -23,7 +23,9 @@
 
 body {
      font-size: 62.5%;
-     background-color: #2e1427;
+     font-family: sans-serif;
+     background-color: rgba(30, 30, 30, 0.853);
+     background: radial-gradient(#542547, rgba(17, 17, 17, 1) 99.8%);
      color: rgb(249, 249, 233);
 
 }
@@ -37,9 +39,20 @@ body > * {
      /* border: green solid 1px */
 }
 h1 {
-     /* color: #f8dff8; */
+     color: rgba(255,255,255,1);
+     text-shadow: 0 0 15px rgba(0,0,0,1);
+     /* 3px 0 0 rgb(127, 3, 188),
+     -3px 0 0 rgb(127, 3, 188),
+     0 -3px 0 rgb(127, 3, 188),
+     0 3px 0 rgb(127, 3, 188); */
      
      font-size: 2.5rem;
+}
+h2 {
+     /* text-shadow: 3px -2px 5px rgba(255,0,0,.7); */
+     font-size: 1.5rem;
+     border-bottom: 1px #542547 solid;
+     padding: 1rem;
 }
 .cursive-font {
      font-family: 'Oleo Script Swash Caps', cursive;
@@ -57,11 +70,15 @@ header {
 .home {
      display: flex;
      flex-wrap: wrap;
-     height: fit-content;
+     height: 700px;
      padding: 0 1rem;
+     /* align-items: center; */
+     /* justify-content: center; */
 }
 .threeD-model {
      /* background-color: orange; */
+     /* border-radius: 30rem; */
+     height: 600px;
 }
 .threeD-model, .intro {
      width: 50%;
@@ -69,6 +86,13 @@ header {
 .intro {
      text-align: center;
      padding: 30px;
+     max-height: 400px;
+     height: 400px;
+     /* align-self: center; */
+     margin-top: 50px;
+     width: 450px;
+     
+     
      
 }
 .question-form {
@@ -82,6 +106,8 @@ header {
 }
 .entry-screen, .response-screen {
      padding: .5rem;
+     
+     
 }
 .past-fortunes {
      flex-basis: 100%;
@@ -103,8 +129,8 @@ header {
 footer {
      width: 100%;
      margin: 0 auto;
-     position: fixed;
-     bottom: 10px;
+     /* position: fixed; */
+     /* bottom: 10px; */
      text-align: center;
 
 }
@@ -113,7 +139,7 @@ footer {
 /* ADDITIONAL STYLES
 /*******************************************/
 .hidden {
-     display: hidden;
+     display: none;
 }
 
 @media screen and (max-width: 750px) {
@@ -121,14 +147,27 @@ footer {
 }
 
 .card-black {
-     background:
-     linear-gradient(333deg, rgba(0,0,0,.5) 3%,rgba(255,255,255,.065) 99%),
-     linear-gradient(rgba(0,0,0,1), rgba(13,13,13));
+     background: rgba(17,17,17,.8);
+     /* linear-gradient(333deg, rgba(0,0,0,.5) 3%,rgba(255,255,255,.065) 99%),
+     linear-gradient(rgb(11, 21, 6), rgb(10, 19, 6)); */
      box-shadow: 0px 0px 10px 3px rgba(0,0,0,.4);
      border-radius: 10px;
+     /* border: .5px solid rgba(255,0,0,.2); */
 }
 .card-gray {
      background:rgba(17,17,17);
      box-shadow: 0px 0px 8px 2px rgba(0,0,0,.4);
      border-radius: 5px;
+}
+
+.purple-btn {
+     border: none;
+     /* background-color: rgba(156, 0, 122, 0.7); */
+     background-color: #542547;
+     color: rgba(245, 245, 245, 0.789);
+     padding: .5rem;
+     border-radius: 1rem;
+     text-transform: uppercase;
+     font-weight: 700;
+     /* box-shadow: 0 0 10px 1px rgba(255,0,0,.7); */
 }

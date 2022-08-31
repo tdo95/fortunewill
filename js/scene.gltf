@@ -1,0 +1,708 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        0.329671174287796,
+        0.0016923875082284212,
+        0.5482270121574402
+      ],
+      "min": [
+        -0.329671174287796,
+        -0.0016931217396631837,
+        -0.5482270121574402
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 384,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        0.0,
+        1.0,
+        7.574575688895635e-11
+      ],
+      "min": [
+        0.0,
+        -1.0,
+        5.049717154842481e-12
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        1.0,
+        5.3932784743388243e-17,
+        7.120238478819374e-07,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -3.0006855599761916e-18,
+        0.0,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        0.9984278678894043,
+        0.24924737215042114
+      ],
+      "min": [
+        0.7024179100990295,
+        0.003185579553246498
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 84,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 768,
+      "componentType": 5126,
+      "count": 4060,
+      "max": [
+        2.7136261463165283,
+        2.7136261463165283,
+        6.269376754760742
+      ],
+      "min": [
+        -2.7136261463165283,
+        -2.7136261463165283,
+        -7.121346473693848
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 49488,
+      "componentType": 5126,
+      "count": 4060,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 512,
+      "componentType": 5126,
+      "count": 4060,
+      "max": [
+        1.0,
+        1.0,
+        0.9855223298072815,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256,
+      "componentType": 5126,
+      "count": 4060,
+      "max": [
+        0.9997724890708923,
+        0.9958382248878479
+      ],
+      "min": [
+        0.0012607276439666748,
+        -0.009908437728881836
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 336,
+      "componentType": 5125,
+      "count": 18678,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 98208,
+      "componentType": 5126,
+      "count": 6510,
+      "max": [
+        2.111943483352661,
+        2.1942901611328125,
+        4.424867630004883
+      ],
+      "min": [
+        -2.111943483352661,
+        -1.9328505992889404,
+        0.10863655805587769
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 176328,
+      "componentType": 5126,
+      "count": 6510,
+      "max": [
+        0.999911904335022,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.999911904335022,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 65472,
+      "componentType": 5126,
+      "count": 6510,
+      "max": [
+        0.9999551773071289,
+        0.9997598528862,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.9995091557502747,
+        -0.9996563196182251,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 32736,
+      "componentType": 5126,
+      "count": 6510,
+      "max": [
+        0.9973551034927368,
+        0.9982115030288696
+      ],
+      "min": [
+        0.004889950156211853,
+        0.003551958128809929
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 75048,
+      "componentType": 5125,
+      "count": 35244,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 254448,
+      "componentType": 5126,
+      "count": 504,
+      "max": [
+        2.224128246307373,
+        1.9538154602050781,
+        5.549758434295654
+      ],
+      "min": [
+        -2.224128246307373,
+        -2.224128246307373,
+        0.18798163533210754
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 260496,
+      "componentType": 5126,
+      "count": 504,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 169632,
+      "componentType": 5126,
+      "count": 504,
+      "max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 84816,
+      "componentType": 5126,
+      "count": 504,
+      "max": [
+        0.9933688640594482,
+        0.9998719692230225
+      ],
+      "min": [
+        0.00012798862007912248,
+        0.00012798862007912248
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 216024,
+      "componentType": 5125,
+      "count": 2328,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Duznot (https://sketchfab.com/duz_vr)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/fortune-teller-2b875c75e4ee429cbf3b0ba9e39188ca",
+      "title": "Fortune Teller"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 225336,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 88848,
+      "byteOffset": 225336,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 266544,
+      "byteOffset": 314184,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 177696,
+      "byteOffset": 580728,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 758424,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Fortune_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Fortune_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Fortune_emissive.jpeg"
+    },
+    {
+      "uri": "textures/Fortune_normal.png"
+    },
+    {
+      "uri": "textures/Cabinet_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Cabinet_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Cabinet_normal.png"
+    },
+    {
+      "uri": "textures/Glass_baseColor.png"
+    },
+    {
+      "uri": "textures/Glass_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Glass_emissive.jpeg"
+    },
+    {
+      "uri": "textures/Glass_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 2
+      },
+      "name": "Fortune",
+      "normalTexture": {
+        "index": 3
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Cabinet",
+      "normalTexture": {
+        "index": 6
+      },
+      "occlusionTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 4
+        },
+        "metallicRoughnessTexture": {
+          "index": 5
+        }
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 9
+      },
+      "name": "Glass",
+      "normalTexture": {
+        "index": 10
+      },
+      "occlusionTexture": {
+        "index": 8
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 7
+        },
+        "metallicRoughnessTexture": {
+          "index": 8
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Card_Fortune_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Zoltar_Cabinet_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Zoltar_Fortune_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 11,
+            "POSITION": 10,
+            "TANGENT": 12,
+            "TEXCOORD_0": 13
+          },
+          "indices": 14,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Zoltar_Glass_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15,
+            "TANGENT": 17,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.9967336058616638,
+        0.060443036258220686,
+        -0.05356119573116301,
+        0.0,
+        -0.04702302813529968,
+        -0.10484255105257012,
+        -0.9933764934539795,
+        0.0,
+        -0.06565818190574646,
+        0.9926503300666809,
+        -0.101657874882221,
+        0.0,
+        43.39549255371094,
+        4.857633113861069,
+        67.18867492675781,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Zoltar.fbx"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        99.98347915889768,
+        1.4125950029950452e-07,
+        -1.8180817256762738,
+        0.0,
+        -1.8158093244018056,
+        4.997919321133718,
+        -99.85851046895306,
+        0.0,
+        0.0908661167819437,
+        99.87502590061199,
+        4.997093625389281,
+        0.0,
+        -1.2930728197097778,
+        836.8018798828125,
+        96.97246551513672,
+        1.0
+      ],
+      "name": "Card"
+    },
+    {
+      "mesh": 0,
+      "name": "Card_Fortune_0"
+    },
+    {
+      "children": [
+        6,
+        7,
+        8
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.0,
+        703.5286254882813,
+        0.0,
+        1.0
+      ],
+      "name": "Zoltar"
+    },
+    {
+      "mesh": 1,
+      "name": "Zoltar_Cabinet_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Zoltar_Fortune_0"
+    },
+    {
+      "mesh": 3,
+      "name": "Zoltar_Glass_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    },
+    {
+      "sampler": 0,
+      "source": 6
+    },
+    {
+      "sampler": 0,
+      "source": 7
+    },
+    {
+      "sampler": 0,
+      "source": 8
+    },
+    {
+      "sampler": 0,
+      "source": 9
+    },
+    {
+      "sampler": 0,
+      "source": 10
+    }
+  ]
+}

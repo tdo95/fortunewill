@@ -98,3 +98,4 @@ function saveFortuneInLocalStorage() {
 }
 
 waitFor = async (delay) => new Promise(resolve => setTimeout(resolve, delay));
+
