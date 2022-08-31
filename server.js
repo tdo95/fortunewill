@@ -45,77 +45,13 @@ const server = http.createServer((req, res) => {
           file: 'js/DRACOLoader.js',
           contentType: 'text/javascript'
         },
-        '/js/MR_INT-001_NaturalStudio_NAD.hdr': {
-          file: 'js/MR_INT-001_NaturalStudio_NAD.hdr',
-          contentType: 'image/vnd.radiance'
-        },
-        '/js/royal_esplanade_1k.hdr': {
-          file: 'js/royal_esplanade_1k.hdr',
-          contentType: 'image/vnd.radiance'
-        },
-        '/js/brown_photostudio_02_1k.hdr': {
-          file: 'js/brown_photostudio_02_1k.hdr',
-          contentType: 'image/vnd.radiance'
-        },
         '/js/sepulchral_chapel_rotunda_1k.hdr': {
           file: 'js/sepulchral_chapel_rotunda_1k.hdr',
           contentType: 'image/vnd.radiance'
         },
-        '/js/scene.gltf': {
-          file: 'js/scene.gltf',
-          contentType: 'model/gltf-binary'
-        },
         '/js/fortune_teller.glb': {
           file: 'js/fortune_teller.glb',
           contentType: 'model/gltf-binary'
-        },
-        '/js/scene.bin': {
-          file: 'js/scene.bin',
-          contentType: 'application/octet-stream'
-        },
-        '/js/textures/Fortune_baseColor.jpeg': {
-          file: 'js/textures/Fortune_baseColor.jpeg',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Fortune_metallicRoughness.png': {
-          file: 'js/textures/Fortune_metallicRoughness.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Fortune_normal.png': {
-          file: 'js/textures/Fortune_normal.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Fortune_emissive.jpeg': {
-          file: 'js/textures/Fortune_emissive.jpeg',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Glass_normal.png': {
-          file: 'js/textures/Glass_normal.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Glass_metallicRoughness.png': {
-          file: 'js/textures/Glass_metallicRoughness.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Glass_emissive.jpeg': {
-          file: 'js/textures/Glass_emissive.jpeg',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Glass_baseColor.png': {
-          file: 'js/textures/Glass_baseColor.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Cabinet_normal.png': {
-          file: 'js/textures/Cabinet_normal.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Cabinet_metallicRoughness.png': {
-          file: 'js/textures/Cabinet_metallicRoughness.png',
-          contentType: 'image/jpeg'
-        },
-        '/js/textures/Cabinet_baseColor.jpeg': {
-          file: 'js/textures/Cabinet_baseColor.jpeg',
-          contentType: 'image/jpeg'
         },
 
         "/api": {

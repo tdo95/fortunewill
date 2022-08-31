@@ -32,7 +32,6 @@ async function processRequest() {
     let response = await fetchFortuneResponse();
     //set fortune response in display
     setFortuneResponse(question, response);
-    console.log(response);
 
     //TODO: unhide response screen
     await toggleResponseScreen();
@@ -89,34 +88,23 @@ async function toggleResponseScreen() {
         // Promise.resolve().then(() => intro.classList.remove('flip'));
     }
     
-    //display transition
-    else {
-        //hide entry screen
-
-        //fade out response screen
-
-        //fade in entry screen
-    }
 }
 
 //load past fortunes into DOM using local storage - loads last 5 responses
-
 function loadPastFortunes() {
     pastFortunes.innerHTML = "<h3 class='cursive-font'>Past <br> Fortunes</h3>"
+    
     let stopNum = (localStorage.length - 5) > 0 ? localStorage.length - 5 : 0;
-    console.log(stopNum)
+  
     for (let i = localStorage.length; i > stopNum; i--) {
         let [question, response] = localStorage[i].split("|");
-        console.log(i, question, response)
+      
         let card = document.createElement('div');
         card.classList.add('past-fortune-box', 'card-gray')
         card.innerHTML = `<h4 class='cursive-font no-margin medium-font'>${question}</h4><p class="no-margin">${response}</p>`;
         pastFortunes.appendChild(card);
     }
 }
-
-
-
 
 waitFor = async (delay) => new Promise(resolve => setTimeout(resolve, delay));
 

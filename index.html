@@ -9,7 +9,7 @@
 		<link rel="icon" type="image/png" href="">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Francois+One&family=Lobster&family=Oleo+Script+Swash+Caps:wght@700&family=Pacifico&family=Raleway:wght@200;300;600;700;800&family=Righteous&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oleo+Script+Swash+Caps:wght@700&family=Raleway:wght@200;300;600;700;800&display=swap" rel="stylesheet">
 
 		<title>FortuneWill</title>
 
@@ -52,11 +52,6 @@
 				</section>
 				<!-- PAST FORTUNES SECTION -->
 				<section class="past-fortunes">
-					<h3 class="cursive-font">Past <br> Fortunes</h3>
-					<div class="past-fortune-box card-gray"></div>
-					<div class="past-fortune-box card-gray"></div>
-					<div class="past-fortune-box card-gray"></div>
-					<div class="past-fortune-box card-gray"></div>
 				</section>
 			</section>
 		</main>
@@ -103,11 +98,11 @@
 	
 			orbit.update();
 
-			//include helper - coordinate guide, the 3 represents the length of the axis
-			const axesHelper = new THREE.AxesHelper(3);
+			// //include helper - coordinate guide, the 3 represents the length of the axis
+			// const axesHelper = new THREE.AxesHelper(3);
 
-			//add axis helper to scene
-			scene.add(axesHelper);
+			// //add axis helper to scene
+			// scene.add(axesHelper);
 
 			//move camera backwards
 			camera.position.set(0,0,8);
@@ -129,15 +124,10 @@
 
 			const rgbeLoader = new THREE.RGBELoader();
 
-			
-
 			// Optional: Provide a DRACOLoader instance to decode compressed mesh data
-			console.log(THREE.DRACOLoader, THREE.GLTFLoader)
 			const dracoLoader = new THREE.DRACOLoader();
 			dracoLoader.setDecoderPath( '/js/draco/' );
 			gltfLoader.setDRACOLoader( dracoLoader );
-
-			
 
 			rgbeLoader.load('./js/sepulchral_chapel_rotunda_1k.hdr', function(texture) {
 				texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -152,8 +142,6 @@
 					model.scale.set(.006,.006,.006)
 					scene.add(model);
 					zoltar = model;
-					console.log('this is zoltar')
-					console.log(zoltar)
 				})
 				
 
