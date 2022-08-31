@@ -21,13 +21,23 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
+html {
      font-size: 62.5%;
+}
+body {
      font-family: sans-serif;
      background-color: rgba(30, 30, 30, 0.853);
      background: radial-gradient(#542547, rgba(17, 17, 17, 1) 99.8%);
+     background-repeat: repeat-y;
      color: rgb(249, 249, 233);
+     font-family: 'Raleway', sans-serif;
+     font-size: 1.2rem;
 
+}
+
+
+body::-webkit-scrollbar {
+     display: none;
 }
 body > * {
      /* border: blue solid 5px; */
@@ -46,13 +56,17 @@ h1 {
      0 -3px 0 rgb(127, 3, 188),
      0 3px 0 rgb(127, 3, 188); */
      
-     font-size: 2.5rem;
+     font-size: 5rem;
+     margin: 1rem 0;
 }
 h2 {
      /* text-shadow: 3px -2px 5px rgba(255,0,0,.7); */
-     font-size: 1.5rem;
+     font-size: 3rem;
      border-bottom: 1px #542547 solid;
      padding: 1rem;
+     margin-top: 1rem;
+     padding-bottom: 3rem;
+     margin-bottom: 3rem;
 }
 .cursive-font {
      font-family: 'Oleo Script Swash Caps', cursive;
@@ -70,7 +84,6 @@ header {
 .home {
      display: flex;
      flex-wrap: wrap;
-     height: 700px;
      padding: 0 1rem;
      /* align-items: center; */
      /* justify-content: center; */
@@ -85,15 +98,13 @@ header {
 }
 .intro {
      text-align: center;
-     padding: 30px;
+     padding: 1rem 3rem;
      max-height: 400px;
      height: 400px;
-     /* align-self: center; */
-     margin-top: 50px;
-     width: 450px;
+     align-self: center;
+     width: 450px;  
      
-     
-     
+     transform: none;
 }
 .question-form {
      display: flex;
@@ -101,8 +112,36 @@ header {
      flex-direction: column;
      align-items: center;
 }
-.question-form > * {
-     margin-bottom: .5rem;
+.question-form > *, .example, .instructions {
+     margin-bottom: 2.5rem;
+}
+.question-input {
+     border: none;
+     outline: none;
+     font-weight: 600;
+     padding: .7rem .8rem;
+     width: 80%;
+     border-radius: 1rem;
+}
+.question-input:focus {
+     box-shadow: 0 0 10px #ffffff;
+}
+.instructions {
+     font-weight: 600;
+     font-size: 1.6rem;
+}
+.example, .answer {
+     color: rgb(186, 184, 184);
+     font-size: 1.4rem;
+}
+.question {
+     font-size: 3rem;
+}
+.answer {
+     font-size: 2rem;
+}
+.error-box {
+     font-weight: 600;
 }
 .entry-screen, .response-screen {
      padding: .5rem;
@@ -114,32 +153,52 @@ header {
      display: flex;
      padding: 1rem;
      text-align: center;
-     align-items: center;
-     overflow-x: scroll;
+     align-items: stretch;
+     justify-content: center;
+     flex-wrap: wrap;
+     /* overflow-x: scroll; */
 }
 .past-fortunes > * {
      margin-right: 2rem;
 }
 .past-fortune-box {
-     height: 60px;
-     min-width: 110px;
+     width: 17rem;
+     min-height: 11rem;
+     padding: .8rem;
 
      background-color: grey;
 }
+.past-fortunes h3 {
+     font-size: 2.5rem;
+     width: 100%;
+     margin: 0;
+     margin-bottom: 3rem;
+}
+.past-fortune-box h3
 footer {
      width: 100%;
-     margin: 0 auto;
-     /* position: fixed; */
-     /* bottom: 10px; */
+     margin: 3rem auto;
      text-align: center;
-
+}
+.past-fortune-box h4 {
+     font-size: 1.6rem;
+     padding-bottom: .8rem;
 }
 
+a {
+     color: #ffffff;
+}
+a:hover {
+     color: rgba(255,0,0,.5)
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 .hidden {
      display: none;
+}
+.no-margin {
+     margin: 0;
 }
 
 @media screen and (max-width: 750px) {
@@ -157,7 +216,7 @@ footer {
 .card-gray {
      background:rgba(17,17,17);
      box-shadow: 0px 0px 8px 2px rgba(0,0,0,.4);
-     border-radius: 5px;
+     border-radius: 3px;
 }
 
 .purple-btn {
@@ -165,9 +224,49 @@ footer {
      /* background-color: rgba(156, 0, 122, 0.7); */
      background-color: #542547;
      color: rgba(245, 245, 245, 0.789);
-     padding: .5rem;
-     border-radius: 1rem;
+     padding: 1rem;
+     border-radius: 1.5rem;
      text-transform: uppercase;
      font-weight: 700;
      /* box-shadow: 0 0 10px 1px rgba(255,0,0,.7); */
+}
+.purple-btn:hover {
+     color: #542547;
+     background-color: black;
+}
+@media screen and (max-width: 960px) {
+     .home {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: center;
+     }
+     .home > * {
+          width: 100%;
+     }
+     .intro {
+          margin: 0 4rem;
+          margin-top: 1rem;
+          margin-bottom: 3rem;
+          width: 90%;
+
+     }
+     .past-fortune-box {
+          margin: 1rem auto;
+          padding: 1rem;  
+     }
+     .threeD-model {
+          height: 400px;
+     } 
+}
+.flip {
+     animation: flip 2s forwards; 
+}
+@keyframes flip {
+     50% {
+          transform: rotateY(180deg);
+     }
+     100% {
+          transform: rotateY(0deg);
+     }
+     
 }

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Crystal Ball Test
+* source:	https://sketchfab.com/3d-models/crystal-ball-test-fc727811052a4b2ba9ef2ffa327e8349
+* author:	WarderiiK (https://sketchfab.com/WarderiiK)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Crystal Ball Test" (https://sketchfab.com/3d-models/crystal-ball-test-fc727811052a4b2ba9ef2ffa327e8349) by WarderiiK (https://sketchfab.com/WarderiiK) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

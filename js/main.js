@@ -7,10 +7,17 @@ let responseScreen = document.querySelector('.response-screen');
 let questionBox = document.querySelector('.question');
 let answerBox = document.querySelector('.answer');
 let newQuestionBtn = document.querySelector('.new-question');
-
+let intro = document.querySelector('.intro')
+let pastFortunes = document.querySelector('.past-fortunes');
 
 newQuestionBtn.addEventListener('click', () => {
-    toggleResponseScreen()
+    //clear old question
+    input.value = "";
+    //unhide entry screen
+    responseScreen.classList.add('hidden');
+    entryScreen.classList.remove('hidden');
+    intro.classList.remove('flip');
+
     loadPastFortunes() 
 });
 
@@ -27,18 +34,13 @@ async function processRequest() {
     setFortuneResponse(question, response);
     console.log(response);
 
-    //TODO: show loading animation
-
     //TODO: unhide response screen
-    toggleResponseScreen();
+    await toggleResponseScreen();
+    
 
-    //wait 1 seconds
-    await waitFor(1000);
+    //save fortune into local storage storing question and response in an object
+    localStorage.setItem(localStorage.length + 1, `${question}|${response}`);
 
-    //TODO: hide loading animation
-
-    //TODO: save fortune in local storage
-    saveFortuneInLocalStorage();
 }
 
 
@@ -46,13 +48,16 @@ async function processRequest() {
 // validates text, if not valid shows error message in the DOM
 function validateQuestion(question) {
     let questionWordList = question.toLowerCase().split(' ');
-    let starterWords = ['will', 'am', 'is'];
+    let starterWords = ['will', 'am', 'is', 'are'];
     
     if (!question) {
         errorTextBox.innerText = 'Please enter a question';
         return false; 
     } else if (questionWordList.length < 2) { 
         errorTextBox.innerText = 'Please ask a valid question';
+        return false;
+    } else if (question.includes('|')) {
+        errorTextBox.innerText = 'You cannot include a pipe character in your question';
         return false;
     } else if (!starterWords.includes(questionWordList[0])) {
         errorTextBox.innerText = 'Please ask a yes or no question';
@@ -73,9 +78,17 @@ function setFortuneResponse(question, answer) {
     answerBox.innerText = answer;
 }
 
-function toggleResponseScreen() {
+async function toggleResponseScreen() {
     let classList = responseScreen.classList;
-    if (classList.contains('hidden')) classList.remove('hidden');
+    
+    if (classList.contains('hidden')) {
+        entryScreen.classList.add('hidden');
+        intro.classList.add('flip');
+        await waitFor(1300)
+        classList.remove('hidden');
+        // Promise.resolve().then(() => intro.classList.remove('flip'));
+    }
+    
     //display transition
     else {
         //hide entry screen
@@ -87,15 +100,25 @@ function toggleResponseScreen() {
 }
 
 //load past fortunes into DOM using local storage - loads last 5 responses
+
 function loadPastFortunes() {
-
+    pastFortunes.innerHTML = "<h3 class='cursive-font'>Past <br> Fortunes</h3>"
+    let stopNum = (localStorage.length - 5) > 0 ? localStorage.length - 5 : 0;
+    console.log(stopNum)
+    for (let i = localStorage.length; i > stopNum; i--) {
+        let [question, response] = localStorage[i].split("|");
+        console.log(i, question, response)
+        let card = document.createElement('div');
+        card.classList.add('past-fortune-box', 'card-gray')
+        card.innerHTML = `<h4 class='cursive-font no-margin medium-font'>${question}</h4><p class="no-margin">${response}</p>`;
+        pastFortunes.appendChild(card);
+    }
 }
 
-//save fortune into local storage storing question and response in an object
-function saveFortuneInLocalStorage() {
 
 
-}
 
 waitFor = async (delay) => new Promise(resolve => setTimeout(resolve, delay));
 
+//loads past fortunes on page load
+loadPastFortunes();

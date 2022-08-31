@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tdo95/fortunewill/issues"
   },
-  "homepage": "https://github.com/tdo95/fortunewill#readme"
+  "homepage": "https://github.com/tdo95/fortunewill#readme",
+  "dependencies": {
+    "gltf-pipeline": "^3.0.5"
+  }
 }

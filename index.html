@@ -9,7 +9,7 @@
 		<link rel="icon" type="image/png" href="">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oleo+Script+Swash+Caps:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Francois+One&family=Lobster&family=Oleo+Script+Swash+Caps:wght@700&family=Pacifico&family=Raleway:wght@200;300;600;700;800&family=Righteous&display=swap" rel="stylesheet">
 
 		<title>FortuneWill</title>
 
@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<!-- NAVIGATION -->
+		<!-- TITLE -->
 		<header class="">
 			<h1 class="cursive-font">FortuneWill</h1>
 		</header>
@@ -34,48 +34,47 @@
 				<section class="intro card-black">
 					<!-- ENTRY SCREEN -->
 					<section class="entry-screen">
-						<h2>What question does your heart seek to answer?</h2>
+						<h2 class="cursive-font">What question does your heart seek to answer?</h2>
 						<p class="instructions">Ask Zoltar any yes or no question.</p>
 						<p class="example">'Will I be happy in 5 years?'</p>
 						<p class="error-box"></p>
 						<form class="question-form" onkeydown="return event.key != 'Enter';" action="">
 							<input class="question-input" type="text" placeholder="Enter question">
-							<button type="button" class="fortune-btn purple-btn">Tell Me My Fortune</button>
+							<button type="button" class="fortune-btn purple-btn">Get My Fortune</button>
 						</form>
 					</section>
 					<!-- RESPONSE SCREEN -->
-					<section class="response-screen">
-						<p class="question"></p>
+					<section class="response-screen hidden">
+						<h2 class="question cursive-font"></h2>
 						<h3 class="answer"></h3>
-						<button class="new-question">New Question</button>
+						<button class="new-question purple-btn">New Question</button>
 					</section>
 				</section>
+				<!-- PAST FORTUNES SECTION -->
 				<section class="past-fortunes">
 					<h3 class="cursive-font">Past <br> Fortunes</h3>
 					<div class="past-fortune-box card-gray"></div>
 					<div class="past-fortune-box card-gray"></div>
 					<div class="past-fortune-box card-gray"></div>
 					<div class="past-fortune-box card-gray"></div>
-					<div class="past-fortune-box card-gray"></div>
-					<div class="past-fortune-box card-gray"></div>
 				</section>
 			</section>
-			<!-- CRYSTAL BALL LOADING ANIMATON SCREEN -->
-			<section class="crystal-ball hidden"></section>
 		</main>
 		<footer>
 			Built by
-			 <a href="">Tee 0.</a>  | 
-			 Animations:
-			 <a href=""></a> 
-			 <a href=""></a>
+			 <a href="https://github.com/tdo95">Tee O.</a>  | 
+			 3D Models:
+			 <a href="https://sketchfab.com/3d-models/fortune-teller-2b875c75e4ee429cbf3b0ba9e39188ca">Zoltar - Duznot</a> 
+			 <a href="https://polyhaven.com/a/sepulchral_chapel_rotunda">Lighting - Andreas Mischok</a>
 		</footer>
 
 		<script type="text/javascript" src="js/main.js"></script>
 		<script src="js/three.js"></script>
+		<script src="js/DRACOLoader.js"></script>
 		<script src="js/GLTFLoader.js"></script>
 		<script src="js/OrbitControls.js"></script>
 		<script src="js/RGBELoader.js"></script>
+		
 		<script>
 			let threeDBox = document.querySelector('.threeD-model');
 			
@@ -86,7 +85,7 @@
 			renderer.setSize(threeDBox.offsetWidth,threeDBox.offsetHeight);
 
 			//injects canvas into the dom
-			threeDBox.appendChild(renderer.domElement)
+			threeDBox.appendChild(renderer.domElement);
 
 			//create scene
 			const scene = new THREE.Scene();
@@ -100,68 +99,76 @@
 			);
 
 			//allows click and rotate functionality
-			let orbit = new THREE.OrbitControls(camera, renderer.domElement)
+			let orbit = new THREE.OrbitControls(camera, renderer.domElement);
+	
 			orbit.update();
-
-			// //define axis
-			// var axis = new THREE.Vector3(0,0,0);
 
 			//include helper - coordinate guide, the 3 represents the length of the axis
 			const axesHelper = new THREE.AxesHelper(3);
+
 			//add axis helper to scene
 			scene.add(axesHelper);
 
 			//move camera backwards
-			camera.position.set(0,0,7.8);
+			camera.position.set(0,0,8);
 			
 			let clock = new THREE.Clock();
 
 			//set background to clear
 			renderer.setClearColor( 0x000000, 0);
 
-
-			//set tone mapping properties for lighting environment
+			// set tone mapping properties for lighting environment
 			renderer.outputEncoding = THREE.sRGBEncoding;
 			renderer.toneMapping = THREE.ACESFilmicToneMapping;
-			renderer.toneMappingExposure = 4;
+			renderer.toneMappingExposure = 2.5;
 
 			//import models and environment lighting
 			let zoltar; //global varaible for model so we can apply animation
+			let ball;
 			const gltfLoader = new THREE.GLTFLoader();
 
 			const rgbeLoader = new THREE.RGBELoader();
-			rgbeLoader.load('./js/MR_INT-001_NaturalStudio_NAD.hdr', function(texture) {
+
+			
+
+			// Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			console.log(THREE.DRACOLoader, THREE.GLTFLoader)
+			const dracoLoader = new THREE.DRACOLoader();
+			dracoLoader.setDecoderPath( '/js/draco/' );
+			gltfLoader.setDRACOLoader( dracoLoader );
+
+			
+
+			rgbeLoader.load('./js/sepulchral_chapel_rotunda_1k.hdr', function(texture) {
 				texture.mapping = THREE.EquirectangularReflectionMapping;
 				scene.environment = texture;
-
-				gltfLoader.load('./js/scene.gltf', function(gltf) {
+				gltfLoader.load('./js/fortune_teller.glb', function(gltf) {
 					const model = gltf.scene;
 					model.position.y = -4.2;
-					model.position.x = 1;
+					model.position.x = window.innerWidth > 960 ? 1 : 0;
 					model.rotation.x = .2;
 					// model.rotateZ(-.8)
 					
 					model.scale.set(.006,.006,.006)
 					scene.add(model);
 					zoltar = model;
+					console.log('this is zoltar')
 					console.log(zoltar)
 				})
+				
 
 			});
-
 
 			function animate() {
 				const time = clock.getElapsedTime();
 
 				if (zoltar) {
-					zoltar.position.y = -4.2 + (Math.cos( time ) * 0.2);
-					
+					zoltar.position.y = -4.2 + (Math.cos( time ) * 0.2);	
 				}
 				//link the scene and camera within the renderer (canvas)
 				renderer.render(scene, camera);
-				
 			}
-
+			
 			renderer.setAnimationLoop(animate);
 			
 			//makes animation responsive
@@ -170,47 +177,6 @@
 				camera.updateProjectionMatrix();
 				renderer.setSize(threeDBox.offsetWidth, threeDBox.offsetHeight);
 			});
-
-			// let scene = new THREE.Scene();
-			// let camera = new THREE.PerspectiveCamera(
-			// 	55, 
-			// 	threeDBox.offsetWidth/threeDBox.offsetHeight,
-			// 	0.01,
-			// 	5000
-			// );
-			// camera.position.set(0,0, 1000)
-			// camera.position.y = 1000;
-
-			
-
-			// highlight = new THREE.AmbientLight(0x404040,10);
-			// scene.add(highlight);
-			// // scene.background = null
-
-			// let renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
-			// renderer.setSize(threeDBox.offsetWidth, threeDBox.offsetHeight);
-			// renderer.setClearColor( 0x000000, 0 );
-			// threeDBox.appendChild(renderer.domElement);
-			
-			// controls = new THREE.OrbitControls(camera, renderer.domElement);
-			// controls.addEventListener('change', renderer);
-
-			// let loader = new THREE.GLTFLoader();
-			// loader.load('/js/scene.gltf', function(gltf){
-			// 	zoltar = gltf.scene.children[0];
-			// 	zoltar.scale.set(0.6,0.6,0.6);
-			// 	zoltar.position.y = -400
-			// 	zoltar.position.x = -30
-				
-
-			//     scene.add(gltf.scene);
-			// 	renderer.render(scene, camera);
-			//     animate();
-			// })
-			// function animate() {
-			// 	renderer.render(scene, camera);
-			// 	requestAnimationFrame(animate);
-			// }
 		</script>
 	</body>
 </html>
