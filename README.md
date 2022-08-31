@@ -6,7 +6,7 @@ Predict your future with FortuneWill, a fullstack web application that provides 
 ![Demo Image Gif](#)
 
 ## How it's made  🏗
-**Tech Used:** 
+**Tech Used:** HTML, CSS, JS, Node.js, [Three.js Library](https://threejs.org/)
 
 ## Features 📱
 - Dynamic 3d models and animations
