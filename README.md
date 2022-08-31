@@ -22,4 +22,5 @@ Predict your future with FortuneWill, a fullstack web application that provides 
 
 ## Future Improvements 📊
 - Increase animation rendering speed to reduce loadtime latency - could further compress files
+- Use machine learning / language AI to dermine if a fragment of words is a question
 - Handle long text inputs
