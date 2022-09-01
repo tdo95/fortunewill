@@ -92,6 +92,7 @@ async function toggleResponseScreen() {
 
 //load past fortunes into DOM using local storage - loads last 5 responses
 function loadPastFortunes() {
+    if (!localStorage.length) return;
     pastFortunes.innerHTML = "<h3 class='cursive-font'>Past <br> Fortunes</h3>"
     
     let stopNum = (localStorage.length - 5) > 0 ? localStorage.length - 5 : 0;
