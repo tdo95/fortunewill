@@ -53,6 +53,10 @@ const server = http.createServer((req, res) => {
           file: 'js/fortune_teller.glb',
           contentType: 'model/gltf-binary'
         },
+        '/FW.png': {
+          file: 'FW.png',
+          contentType: 'image/png'
+        },
 
         "/api": {
           contentType: 'application/json'
