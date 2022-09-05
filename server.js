@@ -3,6 +3,7 @@ const fs = require('fs')
 const url = require('url');
 const querystring = require('querystring');
 const fortuneResponses = require('./reponses');
+let PORT = 8000;
 
 const server = http.createServer((req, res) => {
     const requestUrl = url.parse(req.url);
@@ -92,4 +93,4 @@ function getRandomFortuneResponse() {
 
 
 
-server.listen(`0.0.0.0:$PORT`);
+server.listen(PORT);
