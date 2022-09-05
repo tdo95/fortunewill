@@ -1,9 +1,9 @@
 
 # FortuneWill 🔮
 Predict your future with FortuneWill, a fullstack web application that provides a response to any question you ask.
-<br><br>Try it out here: [Live Site](#) ✨
+<br><br>Try it out here: [Live Site](https://fortunewill.glitch.me/) ✨
 ###
-![Demo Image Gif](#)
+![Demo Image Gif](https://github.com/tdo95/fortunewill/blob/main/fw-gif.gif)
 
 ## How it's made  🏗
 **Tech Used:** HTML, CSS, JS, Node.js, [Three.js Library](https://threejs.org/)
