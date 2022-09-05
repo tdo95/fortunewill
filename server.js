@@ -92,4 +92,4 @@ function getRandomFortuneResponse() {
 
 
 
-server.listen(8000);
+server.listen(`0.0.0.0:$PORT`);
