@@ -58,7 +58,10 @@ const server = http.createServer((req, res) => {
           file: 'FW.png',
           contentType: 'image/png'
         },
-
+        '/FWthumb-min.png': {
+          file: 'FWthumb-min.png',
+          contentType: 'image/png'
+        },
         "/api": {
           contentType: 'application/json'
         }
