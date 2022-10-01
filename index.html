@@ -5,7 +5,7 @@
     	<meta name="description" content="Your description goes here">
     	<meta name="keywords" content="one, two, three">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta property="og:image" content="" />
+		<meta property="og:image" content="https://fortunewill.glitch.me/FWthumb-min.png" />
 		<link rel="icon" type="image/png" href="FW.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +95,7 @@
 
 			//allows click and rotate functionality
 			let orbit = new THREE.OrbitControls(camera, renderer.domElement);
-	
+			orbit.enableZoom = false;
 			orbit.update();
 
 			// //include helper - coordinate guide, the 3 represents the length of the axis
