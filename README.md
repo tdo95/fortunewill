@@ -30,14 +30,14 @@
   <p align="center">
     See into the future and get questions about your fortune answered!
     <br />
-    <a href="https://github.com/tdo95/countries-of-the-world-api"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tdo95/fortunewill"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/tdo95/countries-of-the-world-api/issues">Report Bug</a>
+    <a href="https://github.com/tdo95/fortunewill/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tdo95/countries-of-the-world-api/issues">Request Feature</a>
+    <a href="https://github.com/tdo95/fortunewill/issues">Request Feature</a>
   </p>
 </div>
 <br />
@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Countries of the World Demo][product-screenshot]](#)
+[![Countries of the World Demo][product-screenshot]](https://fortunewill.glitch.me/)
 
 Curious about what the future has in store for you?
 
@@ -109,7 +109,7 @@ The application is built with the following technologies:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-If you would like to use Fortune Will online, visit [#](#). 
+If you would like to use Fortune Will online, visit [https://fortunewill.glitch.me/](https://fortunewill.glitch.me/). 
 
 To get a local copy of the application up and running follow these simple example steps.
 
